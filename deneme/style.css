@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --cirle: rgb(233, 8, 8);
+    --bg-light: rgb(207, 169, 169);
+    --bg-dark: #333;
+    --bg-brown: rgb(128, 8, 8);
+    --text-light: #fff;
+}
+
+/*UTILITY*/
+
+/*Colors*/
+.bg-light{
+    background-color: var(--bg-light);
+}
+
+.bg-dark{
+    background-color: var(--bg-dark);
+}
+
+.bg-brown{
+    background-color: var(--bg-brown);
+}
+
+/*text*/
+.text-center{
+    text-align: center;
+}
+
+img{
+    display: block;
+    max-width: 100%;
+    padding: 10px 10px;
+}
+
+h1,
+h2,
+h3,
+p{
+    margin-bottom: 20px;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 1.31rem;
+    line-height: 1.6    ;
+}
+
+.container{
+    margin-inline:auto;
+    width: 90%;
+}
+
+
+
+.row{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Yapılan işlem row utulitysini flex ile column yaptık ve media ile responsive ayarladık*/
+@media (min-width: 640px) {
+
+    .row{
+        flex-direction: row;
+    }
+
+
+    /*herşeyi aynı width ayarlamak için*/
+    .row > * {
+        flex-basis: 100%;
+    }
+
+
+    /*any element before sibling that*/ 
+    .row * + * {
+        margin-left: 10px;
+    }
+
+    header ,
+    section{
+        padding: 4em;
+    }
+    
+}
+
+.bg-dark h1,
+.bg-brown h1{
+    color: var(--text-light);
+}
